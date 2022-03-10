@@ -21,12 +21,14 @@ class MyApp extends StatelessWidget {
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
+  int count = 0;
+
   void decrement() {
-    print('decrement');
+    count--;
   }
 
   void increment() {
-    print("incrment");
+    count++;
   }
 
   @override
@@ -51,11 +53,11 @@ class HomePage extends StatelessWidget {
                 fontWeight: FontWeight.w500,
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.all(32),
+            Padding(
+              padding: const EdgeInsets.all(32),
               child: Text(
-                '0',
-                style: TextStyle(
+                '$count',
+                style: const TextStyle(
                   fontSize: 100,
                   color: Colors.pink,
                 ),
